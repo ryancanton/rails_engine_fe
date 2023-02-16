@@ -7,7 +7,7 @@ class MerchantService
   end
 
   def self.merchant(id)
-    response = Faraday.get("http://localhost:3000/api/v1/merchants#{id}")
+    response = Faraday.get("http://localhost:3000/api/v1/merchants/#{id}")
 
     data = JSON.parse(response.body, symbolize_names: true)[:data]
   end
